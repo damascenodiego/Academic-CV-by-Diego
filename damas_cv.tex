@@ -1,0 +1,363 @@
+% Copyright (C) 2022 CDN (Diego) Damasceno
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{currvita}
+\usepackage[square,sort,comma,numbers]{natbib}
+\bibliographystyle{acm}
+\usepackage{bibentry}
+\usepackage{xcolor}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{enumitem}
+\nobibliography*
+
+% \usepackage[margin=2.0cm]{geometry}
+\usepackage[left=2cm,right=2cm]{geometry}
+% \usepackage[bottom=2.5cm,top=2.5cm]{geometry}
+
+\usepackage{titlesec}
+
+% Conditional printing 
+\newif\ifREFs% \REFsfalse (List of References)
+\newif\ifPersonalInfo % \PersonalInfofalse (Personal information)
+
+\PersonalInfotrue % Prints phone, gmail/skype, custom closing message
+\REFstrue % Prints references
+
+% Sections formatting
+\titleformat{\section}{\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule]
+\titleformat{\subsection}{\bfseries\raggedright\large}{}{0em}{}[]
+
+% Phone and Email as hyperlinks
+\usepackage{color}
+\newcommand\phone[1]{\href{tel:#1}{{\emailfont #1}}}
+\newcommand\email[1]{\href{mailto:#1}{{\emailfont #1}}}
+\newcommand\emailfont{\sffamily}
+
+% CV Info (to be customized).
+\newcommand{\CVAuthor}{My first name and surname, MBA, PhD}
+\newcommand{\CVTitle}{My short name's CV}
+\newcommand{\CVWebpage}{http://damascenodiego.github.io/}
+
+\ifPersonalInfo
+    \newcommand{\CVNote}{CV compiled on {\today} for the position xxxx}
+\else
+    \newcommand{\CVNote}{CV compiled on {\today} for the website \CVWebpage}
+\fi
+
+\begin{document}
+\begin{cv}{Curriculum Vitae}
+\section{Personal Information}
+  \begin{cvlist}{}
+  \item \CVAuthor\\
+    Postdoctoral Researcher\\
+    University Name\\
+    Faculty Name\\
+    Department Name\\
+    Address and Zip Code\\
+    City, The Country
+
+  \item 
+    \ifPersonalInfo
+        Tel.:~\phone{+31 (6) xxxx-xxxx}\\
+    \else
+        Tel.:~\texttt{Available upon request}\\
+    \fi
+    Email:~\email{x.xxxxxxxxx@xx.yy.zz}\\
+    \ifPersonalInfo
+        GMail:~\email{xxxxxxxxxxxxx@cccc.com}\\
+        Skype:~\email{xxxxxxxxxxxxx@cccc.com}\\
+    \fi
+    Homepage: \url{\CVWebpage}\\
+    GitHub: \url{https://github.com/xxxxxxxxxxxx}\\
+    Google Scholar: \url{https://scholar.google.com/citations?user=xxxxxxxxxxx}\\
+    DBPL: \url{https://dblp.org/pid/000/0000.html}\\
+    ORCiD: \url{https://orcid.org/0000-0000-0000-0000}\\
+    Linkedin: \url{https://linkedin.com/in/xxxxxxxxxxxx}
+    \ifPersonalInfo
+      \item 
+        Birth date: 22 April 1500\\
+        Place of birth: City, Country\\
+        Nationality: Brazilian\\
+        Martial state: xxxxxxx
+    \fi
+  \end{cvlist}
+  
+% \vspace{-0.75cm}
+ \section{Education}
+  \begin{cvlist}{}
+  \item[05/2016--07/2020] 
+      \textbf{Ph.D.,} {{\textbf{Computer Science and Computational Mathematics}}}\\ 
+      University of São Paulo ({ICMC-USP}), São Carlos - SP, Brazil\\
+      \textbf{Thesis:} \href{https://www.teses.usp.br/teses/}{Extremely long title of my thesis}\\
+      \textbf{Advisor:} {xxxxxx xxxxxx}\\
+      \textbf{Co-Advisor:} {xxxxxx xxxxxx xxxxxx}
+  \item[04/2020--12/2021] 
+      \textbf{MBA,} {{\textbf{Project Management}}}\\
+      University of São Paulo ({USP/Esalq}), Piracicaba-SP, Brazil\\
+      \textbf{Thesis:} Extremely long title of my thesis \\
+      \textbf{Advisor:} {xxxxxx xxxxxx xxxxxx}
+  \item[02/2014--05/2016] 
+      \textbf{M.Sc.,} {{\textbf{Computer Science and Computational Mathematics}}}\\ 
+      University of São Paulo ({ICMC-USP}), São Carlos - SP, Brazil\\
+      \textbf{Thesis:} \href{http://www.teses.usp.br/teses/disponiveis/en.php}{Extremely long title of my thesis}\\
+      \textbf{Advisor:} {xxxxxx xxxxxx}
+  \item[03/2008--01/2014] 
+      \textbf{B.Sc.,} {{\textbf{Computer Science}}}\\ 
+      Federal University of Pará ({UFPa}), Belém - PA, Brazil
+  \end{cvlist}
+\section{Professional Experience}
+  \begin{cvlist}{}
+    \item[00/1111--Current]
+      {\textbf{Place name}}\\
+      {Position:} Position name\\
+      {Project:} Project name\\
+      {Supervisor:} {xxxxxxxxxxxxxxxxxxx}
+    \item[00/1111--00/2222]
+      {\textbf{Place name}}\\
+      {Position:} Position name\\
+      {Project:} Project name\\
+      {Supervisor:} {xxxxxxxxxxxxxxxxxxx}
+  \end{cvlist}
+  
+ \section{Pedagogical Experience}
+  \begin{cvlist}{}
+      \item[00/1111--Current]
+      {\textbf{Place name}}\\
+      {Position:} Position name\\
+      {Project:} Project name\\
+      {Supervisor:} {xxxxxxxxxxxxxxxxxxx}
+    \item[00/1111--00/2222]
+      {\textbf{Place name}}\\
+      {Position:} Position name\\
+      {Project:} Project name\\
+      {Supervisor:} {xxxxxxxxxxxxxxxxxxx}
+\end{cvlist}
+
+\section{Academic Experience}
+\begin{cvlist}{}
+    \item[00/1111--22/3333]
+        \href{about:blank}{\textbf{Name (Acronym)}}\\ 
+        {Position:} {position name} \\
+        {Location:} location name\\
+        {Research topic:} topic1, topic2,... topicN\\
+        {Supervisor:} supervisor name
+  \end{cvlist}
+
+\section{Supervisions and Examinations}
+\subsection{Supervised MSc Students}
+\begin{cvlist}{}
+    \item[2021]
+    {\em name}
+    (Type: Location).
+    Thesis Title: xxxxx
+    Graduated: December 2021.
+
+\end{cvlist}
+\subsection{Member of Examination Committees}
+\begin{cvlist}{}
+% \addtolength{\itemindent}{1cm}
+    \item[2020]
+    {\em name}
+    (Type: Location).
+    
+\end{cvlist}
+
+%
+%\vspace{-1cm}
+\section{Publications}
+
+\subsection{Overview}
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{l|l|l|l|l}
+\hline
+Publication type     & Total & First author & Supervisor & Award/Nominee \\ \hline
+Journal              & 4     & 2            & 1          & 0             \\ 
+Conference           & 10    & 5            & 0          & 2             \\ 
+Short paper          & 5     & 4            & 0          & 0             \\ \hline
+\textbf{Total}       & 19    & 11           & 1          & 2             \\ \hline
+\end{tabular}
+\caption{Publications per type}
+\end{table}
+
+\subsection{Journal Publications}
+\begin{cvlist}{}
+    \item 
+        \begin{enumerate}[leftmargin=-2cm]
+            \item \bibentry{ahu61}
+            \item \bibentry{ahu61}
+        \end{enumerate}
+\end{cvlist}
+\subsection{Conferences}
+\begin{cvlist}{}
+    \item 
+        \begin{enumerate}[resume,leftmargin=-2cm]
+            \item \bibentry{ahu61}
+            \item \bibentry{ab94}
+        \end{enumerate}
+\end{cvlist}
+\subsection{Extended Abstract / Short Papers}
+\begin{cvlist}{}
+    \item 
+        \begin{enumerate}[resume,leftmargin=-2cm]
+            \item \bibentry{ahu61}
+            \item \bibentry{ab94}
+        \end{enumerate}
+\end{cvlist}
+\subsection{Technical Report}
+\begin{cvlist}{}
+    \item 
+        \begin{enumerate}[resume,leftmargin=-2cm]
+            \item \bibentry{ahu61}
+        \end{enumerate}
+\end{cvlist}
+\subsection{Posters}
+\begin{cvlist}{}
+    \item 
+        \begin{enumerate}[resume,leftmargin=-2cm]
+            \item \bibentry{ahu61}
+        \end{enumerate}
+\end{cvlist}
+\subsection{Thesis}
+\begin{cvlist}{}
+    \item 
+        \begin{enumerate}[resume,leftmargin=-2cm]
+            \item \bibentry{ahu61}
+        \end{enumerate}  
+\end{cvlist}
+
+\section{Community Services}
+\subsection{Organizing Commitee}
+\begin{cvlist}{}
+\item \begin{enumerate}[leftmargin=-2cm]
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        % \item xyz ...
+    \end{enumerate}
+\end{cvlist}
+\subsection{Program Committee}
+\begin{cvlist}{}
+\item \begin{enumerate}[leftmargin=-2cm]
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        % \item xyz ...
+    \end{enumerate}
+\end{cvlist}
+\subsection{Artifact Evaluation Committee}
+\begin{cvlist}{}
+\item \begin{enumerate}[leftmargin=-2cm]
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+    \end{enumerate}
+\end{cvlist}
+\subsection{Journal Reviews}
+\begin{cvlist}{}
+\item \begin{enumerate}[leftmargin=-2cm]
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        % \item xyz ...
+        % \item xyz ...
+    \end{enumerate}
+\end{cvlist}
+\subsection{External Reviewer}
+\begin{cvlist}{} 
+\item \begin{enumerate}[leftmargin=-2cm]
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+        \item \textbf{[acronym'23]}: name  \href{about:blank}{2023}. Role: xxxxxxxxxx
+    \end{enumerate}
+\end{cvlist}
+\subsection{Student Volunteer}
+\begin{cvlist}{}
+\item \begin{enumerate}[leftmargin=-2cm]
+        \item \textbf{[acronym'23]}: Description here
+        \item \textbf{[acronym'23]}: Description here
+\end{enumerate}
+
+\end{cvlist}
+\subsection{Invited Speaker}
+\begin{enumerate}%[leftmargin=-2cm]
+    \item \textbf{acronym'23} Venue-name. Title-of-the-talk. Date. dd mm yyyy.
+    \item \textbf{acronym'23} Venue-name. Title-of-the-talk. Date. dd mm yyyy.
+    \item \textbf{acronym'23} Venue-name. Title-of-the-talk. Date. dd mm yyyy.
+
+\end{enumerate}
+
+\section{Volunteering}
+\begin{enumerate}%[leftmargin=-2cm]
+    \item \textbf{acronym'23} Venue-name. Date. dd mm yyyy.
+    \item \textbf{acronym'23} Venue-name. Date. dd mm yyyy.
+    \item \textbf{acronym'23} Venue-name. Date. dd mm yyyy.
+\end{enumerate}
+
+\section{Honors, Awards \& Scholarships}
+\begin{cvlist}{}
+  \item[xxx 1500] Description of the honors, awards or scholarship.
+  \item[xxx 1500] Description of the honors, awards or scholarship.
+\end{cvlist}
+
+\section{Schools and Workshops Attended}
+\begin{cvlist}{}
+    \item[\href{about:blank}{xxxx 2020}] Description of this item goes here.
+    \item[\href{about:blank}{xxxx 2020}] Description of this item goes here.
+    \item[\href{about:blank}{xxxx 2020}] Description of this item goes here.
+\end{cvlist}
+
+\section{Tools and Artifacts}
+\begin{cvlist}{}
+    \item [2009] \href{https://web.archive.org/web/20131112230241/http\%3A\%2F\%2Fslackware.it\%2Fpb\%2Fplugin.php}{Nane of some early project of mine}
+    \item [2021] \href{https://xxxxxxxxxxxxx.github.io}{Name of some recent project of mine}
+\end{cvlist}
+
+\section{Personal Interests}
+\begin{cvlist}{}
+    \item Running, Cycling, Swimming, Hiking, Traveling
+\end{cvlist}
+
+%   \vspace{-1cm}
+\section{Languages}
+\begin{cvlist}{}
+  \item Portuguese (native)
+  \item English (TOEFL iBT: 96/120)
+  \item Dutch (basic)
+\end{cvlist}
+
+% \vspace{1cm}
+
+\ifREFs% \ALLfalse
+\section{Reference}
+  \begin{cvlist}{}
+  \item[\textbf{Prof. dr. fullname1}] (M.Sc. \& Ph.D. advisor)
+  \item[~ ~{Position:}]  Professor at University of São Paulo - USP 
+  \item[~ ~{Institute:}] Institute of Mathematical and Computer Sciences (ICMC)
+  \item[~ ~{Address:}]   Av. Sao Carlense 400, Centro, 13560-970, São Carlos,BR
+  \item[~ ~{Email:}]     \href{mailto:xxxx@usp.br}{xxxx@usp.br}
+  \item[\textbf{Prof. dr. fullname2}]  (Ph.D. co-advisor)
+  \item[~ ~{Position:}]  Professor at King's College London 
+  \item[~ ~{Department:}] Department of Informatics
+  \item[~ ~{Address:}]   King's College London, Strand, WC2R 2LS, London,UK
+  \item[~ ~{Email:}]     \href{mailto:xxxx@kcl.ac.uk}{xxxx@kcl.ac.uk}
+  \end{cvlist}
+\fi
+
+
+  \vfill
+  \hfill\cvplace{City - Country}
+  \date{\today}
+  \flushright{[\textit{\CVNote}]}
+
+\end{cv}
+\nobibliography{damas_cv}
+
+\end{document}
+\endinput
+%%
+%% End of file `cvtest.tex'.
